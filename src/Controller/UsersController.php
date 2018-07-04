@@ -42,7 +42,10 @@ class UsersController extends AppController {
      */
     public function initialize() {
         parent::initialize();
-        $this->Auth->allow(['signup', 'signin', 'forgotpassword', 'setpassword', 'activeaccount', 'paynow', 'index', 'searchlist', 'servicedetails', 'ajaxaddtofavourite', 'fblogin', 'uploadphoto_add', 'toptenlist', 'jimjafav', 'googlelogin', 'fetchservice', 'services', 'reviews', 'contactus', 'subscribe', 'servicesearch','forgotpassword']);
+        $this->Auth->allow(['signup', 'signin', 'forgotpassword', 'setpassword', 'activeaccount',
+            'paynow', 'index', 'searchlist', 'servicedetails', 'ajaxaddtofavourite', 'fblogin',
+            'uploadphoto_add', 'toptenlist', 'jimjafav', 'googlelogin', 'fetchservice', 'services',
+            'reviews', 'contactus', 'subscribe', 'servicesearch','forgotpassword']);
         $this->loadComponent('Paginator');
     }
 
@@ -1128,53 +1131,7 @@ class UsersController extends AppController {
         $this->set('_serialize', ['user']);
     }
 
-    public function changepass() {
-
-        $this->viewBuilder()->layout('default');
-        $this->loadModel('Users');
-        $user = $this->Users->get($this->Auth->user('id'));
-        //$user = $this->Auth->identify();
-
-        // echo "<pre>";
-        // print_r($user);
-        // exit;
-        $existing_password = $user->password;
-
-        //echo $user->password.'<br>';
-
-        if ($this->request->is(['post', 'put'])) {
-
-            //echo "<pre>";print_r($this->request->data);exit;
-
-            $old_pass = $this->request->data['old_password'];
-            $new_pass = $this->request->data['new_password'];
-            $confirm_pass = $this->request->data['confirm_password'];
-
-            $hasher = new DefaultPasswordHasher();
-
-            if($hasher->check($old_pass, $existing_password)){
-
-                if($new_pass == $confirm_pass){
-                    $update_password['password'] = $new_pass;
-                    $user = $this->Users->patchEntity($user, $update_password);
-                    if ($this->Users->save($user)){
-                        $this->Flash->success(__('Password has been Changed successfully.'));
-                    }
-                }
-                else{
-                    $this->Flash->error(__('New password and confirm password mismatch.'));
-                }
-
-            }
-            else{
-                $this->Flash->error(__('Old password incorrect.'));
-            }
-
-            //return $this->redirect(['action' => 'index']);
-        }
-        $this->set(compact('user'));
-        $this->set('_serialize', ['user']);
-    }
+    
 
     public function searchlist() {
         $this->viewBuilder()->layout('default');
@@ -3255,5 +3212,145 @@ class UsersController extends AppController {
         echo count($msgcount);
         exit();
     }
+
+    
+     public function edituser($id = null) {
+        
+        $user = $this->Users->get($id);
+        
+        if ($this->request->is(['post', 'put'])) {
+
+
+            $flag = true;
+            if ($this->request->data['first_name'] == "") {
+                $this->Flash->error(__('First Name can not be null. Please, try again.'));
+                $flag = false;
+            }
+
+            $flag = true;
+            if ($this->request->data['username'] == "") {
+                $this->Flash->error(__('User Name can not be null. Please, try again.'));
+                $flag = false;
+            }
+
+            $arr_ext = array('jpg', 'jpeg', 'gif', 'png');
+            if (!empty($this->request->data['image']['name'])) {
+                $file = $this->request->data['image']; //put the data into a var for easy use
+                $ext = substr(strtolower(strrchr($file['name'], '.')), 1); //get the extension
+                $fileName = time() . "." . $ext;
+                if (in_array($ext, $arr_ext)) {
+
+                    if ($user->pimg != "" && $user->pimg != $fileName) {
+                        $filePathDel = WWW_ROOT . 'user_img' . DS . $user->pimg;
+                        if (file_exists($filePathDel)) {
+                            unlink($filePathDel);
+                        }
+                    }
+                    move_uploaded_file($file['tmp_name'], WWW_ROOT . 'user_img' . DS . $fileName);
+                    $file = $fileName;
+                    $this->request->data['pimg'] = $fileName;
+                } else {
+                    $flag = false;
+                    $this->Flash->error(__('Upload image only jpg,jpeg,png files.'));
+                }
+            } else {
+                $this->request->data['pimg'] = $user->pimg;
+            }
+            if ($flag) {
+               
+                $user = $this->Users->patchEntity($user, $this->request->data);
+                $user['modified'] = gmdate("Y-m-d H:i:s");
+                if ($this->Users->save($user)) {
+                    $this->Flash->success(__('User has been edited successfully.'));
+                    //return $this->redirect(['action' => 'listuser']);
+                } else {
+                    $this->Flash->error(__('User could not be edit. Please, try again.'));
+                    //eturn $this->redirect(['action' => 'listuser']);
+                }
+            } else {
+                //return $this->redirect(['action' => 'listuser']);
+            }
+        }
+      
+       
+        $this->set(compact('user'));
+        $this->set('_serialize', ['user']);
+        
+        
+    }
+    
+    
+
+    
+    
+    public function changepass() {
+
+        $this->viewBuilder()->layout('default');
+        $this->loadModel('Users');
+        $user = $this->Users->get($this->Auth->user('id'));
+        //$user = $this->Auth->identify();
+
+        // echo "<pre>";
+        // print_r($user);
+        // exit;
+        $existing_password = $user->password;
+
+        //echo $user->password.'<br>';
+
+        if ($this->request->is(['post', 'put'])) {
+
+            //echo "<pre>";print_r($this->request->data);exit;
+
+            $old_pass = $this->request->data['old_password'];
+            $new_pass = $this->request->data['new_password'];
+            $confirm_pass = $this->request->data['confirm_password'];
+
+            $hasher = new DefaultPasswordHasher();
+
+            if($hasher->check($old_pass, $existing_password)){
+
+                if($new_pass == $confirm_pass){
+                    $update_password['password'] = $new_pass;
+                    $user = $this->Users->patchEntity($user, $update_password);
+                    if ($this->Users->save($user)){
+                        $this->Flash->success(__('Password has been Changed successfully.'));
+                    }
+                }
+                else{
+                    $this->Flash->error(__('New password and confirm password mismatch.'));
+                }
+
+            }
+            else{
+                $this->Flash->error(__('Old password incorrect.'));
+            }
+
+            //return $this->redirect(['action' => 'index']);
+        }
+        $this->set(compact('user'));
+        $this->set('_serialize', ['user']);
+    }
+    
+    
+  
+
+public function profile(){
+    
+    $user_id = $this->request->session()->read('Auth.User.id');
+    $points=0;
+    $anscount=0;
+    $this->loadModel('Answers');
+    $checkuser = $this->Answers->find()->where(['user_id' => $user_id])->toArray();
+    if(!empty($checkuser)){
+        $points = $this->Answers->find()->select(['sum' => $query->func()->sum('Answers.points_received')])->where(['user_id' => $user_id])->toArray();
+        $anscount = $this->Answers->find()->count();
+    }
+    //$points = $this->Answers->find()->select(['sum' => $query->func()->sum('Answers.points_received')])->where(['user_id' => $user_id])->toArray();
+    $this->set('current_user', $this->Auth->user());
+    
+    $this->set(compact('points','anscount'));
+   
+}
+
 
 }
