@@ -78,7 +78,9 @@ class UsersController extends AppController {
             $session->write('pinterest',$site_settings_val->pinterest_url);
         }
 
-        $this->set(compact('makes', 'models', 'categories'));
+        $logtype = 'index';
+
+        $this->set(compact('makes', 'models', 'categories','logtype'));
     }
 
     function subscribe() {
@@ -584,8 +586,8 @@ class UsersController extends AppController {
                 }
             }
         }
-        
-        //$this->set(compact('user'));
+        $logtype = 'signup';
+        $this->set(compact('logtype'));
         //$this->set('_serialize', ['user']);
     }
 
@@ -639,21 +641,21 @@ class UsersController extends AppController {
             $email = trim($this->request->data['email']);
             $this->request->data['email'] = $email;
 
-            // if($this->request->data['remember']){
+            if($this->request->data['remember']){
 
-            //    /* Set cookie to last 1 year */
-            //     setcookie('email', $this->request->data['email'], time()+60*60*24*365, '/');
-            //     setcookie('passwordone', $this->request->data['password'], time()+60*60*24*365, '/');
+               /* Set cookie to last 1 year */
+                setcookie('email', $this->request->data['email'], time()+60*60*24*365, '/');
+                setcookie('passwordone', $this->request->data['password'], time()+60*60*24*365, '/');
             
-            // }
-            // elseif(!$this->request->data['remember']){
-            //     setcookie("email", '', 1, '/');
-            //     setcookie("passwordone", '', 1, '/');
-            //     // unset($_COOKIE['email']);
-            //     // unset($_COOKIE['passwordone']);
-            //     // setcookie("email", "", time()-3600);
-            //     // setcookie("passwordone", "", time()-3600);
-            // }
+            }
+            elseif(!$this->request->data['remember']){
+                setcookie("email", '', 1, '/');
+                setcookie("passwordone", '', 1, '/');
+                // unset($_COOKIE['email']);
+                // unset($_COOKIE['passwordone']);
+                // setcookie("email", "", time()-3600);
+                // setcookie("passwordone", "", time()-3600);
+            }
             
 
             $user = $this->Auth->identify();
@@ -695,12 +697,19 @@ class UsersController extends AppController {
                 return $this->redirect(['action' => 'signin']);
             }
         }
+
+        $logtype = 'signin';
+        $this->set(compact('logtype'));
     }
 
     public function forgotpassword() {
 
-
         $this->loadModel('Users');
+        $this->loadModel('SiteSettings');
+
+        $admin_mail_data = $this->SiteSettings->find()->first();
+        $mailFrom = $admin_mail_data->contact_email;
+        $mailFromSub = $admin_mail_data->site_title;
 
         //$user = $this->Users->newEntity();
         if ($this->request->is('post')) {
@@ -714,12 +723,12 @@ class UsersController extends AppController {
             $etRegObj = TableRegistry::get('EmailTemplates');
             $emailTemp = $etRegObj->find()->where(['id' => 1])->first()->toArray();
 
-            $siteSettings = $this->site_setting();
+            //$siteSettings = $this->site_setting();
             //pr($siteSettings); pr($emailTemp); pr($userExist); pr($this->request->data); exit;
             if (!empty($userExist)) {
                 $chkPost = $this->generateRandomString(); //Generating new Password
                 $this->request->data['password'] = $chkPost;
-                $this->request->data['password'] = $this->request->data['password'];
+                
                 $this->request->data['id'] = $userExist->id;
                 $userdt = TableRegistry::get('Users');
                 $query = $userdt->query();
@@ -731,7 +740,7 @@ class UsersController extends AppController {
                 $mail_To = $userExist['email'];
                 $mail_CC = '';
                 $mail_subject = $emailTemp['subject'];
-                $name = $userExist['first_name']." ".$userExist['last_name'];
+                $name = $userExist['username'];
                 $url = Router::url('/', true);
                 //$link = $url . 'users/setpassword/' . $chkPost;
 
@@ -739,7 +748,7 @@ class UsersController extends AppController {
                 //echo $mail_body; exit();
                 // Sending user the reset password link.
                 $email = new Email('default');
-                if ($email->emailFormat('html')->from(['nit.spandan@gmail.com' => 'Biketory'])
+                if ($email->emailFormat('html')->from([$mailFrom => $mailFromSub])
                                 ->to($userExist['email'])
                                 ->subject($mail_subject)
                                 ->send($mail_body)) {
@@ -760,13 +769,21 @@ class UsersController extends AppController {
 
     public function signout() {
         $this->Auth->logout();
-        $this->Flash->success(__('You are Successfully loged out.'));
+        $this->Flash->success(__('You are Successfully logged out.'));
         //return $this->redirect('/');
         return $this->redirect(['action' => 'index']);
     }
 
     public function dashboard() {
         $this->viewBuilder()->layout('default');
+        $this->loadModel('Users');
+
+        $user = $this->Users->get($this->Auth->user('id'));
+        $id = $this->Auth->user('id');
+
+        $users = $this->Users->find()->where(['id' => $id])->first();
+
+        $this->set(compact('users'));
     }
 
     public function sellerdashboard() {
