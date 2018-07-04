@@ -3,7 +3,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-6 signup-image align-self-center">
                     <h1>Let's start sharing knowledge </h1>
-                    <img src="images/signup.png" alt="" class="img-fluid"/>
+                    <img src="<?php echo $this->Url->build('/images/signup.png'); ?>" alt="" class="img-fluid"/>
                     
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -12,7 +12,10 @@
                          <label for="exampleInputEmail1"><b>Sign up with your email address</b></label>
                          <!--<button class="btn facebook">
                             <i class="ion-social-facebook"></i> <span>login Using Facebook</span>
-                         </button>  -->                  
+                         </button>  -->
+                        <div id="msgsuc" style="color:#008000;"></div>
+                        <div id="msgerr" style="color:#ff0000;"></div>
+
                       </div>
                       <div class="form-group">
                         <input type="text" class="form-control" placeholder="Username" name="username" id="username">
@@ -91,7 +94,10 @@
         //alert("Hi");return false;
 
         if($("#username").val().search(/\S/) == -1){
-            alert("Username cannot be empty");return false;
+            document.getElementById("username").focus();
+            $('#msgerr').html('');
+            $('#msgerr').html('Username field can not be blank!');
+            return false;
         }
 
         var email = $("#email").val();
@@ -99,54 +105,80 @@
         var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
         if (!filter.test(email)) {
-            alert('Please provide a valid email address');
-            email.focus;
+            document.getElementById("email").focus();
+            $('#msgerr').html('');
+            $('#msgerr').html('Please provide a valid email address');
             return false;
         }
 
         if($("#password").val().search(/\S/) == -1){
-            alert("Password cannot be empty");return false;
+            document.getElementById("password").focus();
+            $('#msgerr').html('');
+            $('#msgerr').html('Password cannot be empty');
+            return false;
         }
 
         if($("#con_password").val().search(/\S/) == -1){
-            alert("Confirm password cannot be empty");return false;
+            document.getElementById("con_password").focus();
+            $('#msgerr').html('');
+            $('#msgerr').html('Confirm password cannot be empty');
+            return false;
         }
 
         if($("#password").val() != $("#con_password").val()){
-            alert("Password and confirm password should be same");
+            $('#msgerr').html('');
+            $('#msgerr').html('Password and confirm password should be same');
             return false;
         }
 
         if($("#day").val().search(/\S/) == -1){
-            alert("Day cannot be empty");return false;
+            document.getElementById("day").focus();
+            $('#msgerr').html('');
+            $('#msgerr').html('Day cannot be empty');
+            return false;
         }
 
         var birth_day = $("#day").val();
         if(birth_day != ''){
             if(isNaN(birth_day)){
-                alert("Day should be numeric"); return false;
+                document.getElementById("day").focus();
+                $('#msgerr').html('');
+                $('#msgerr').html('Day should be numeric');
+                return false;
             }
         }
 
         if($("#month").val().search(/\S/) == -1){
-            alert("Month cannot be empty");return false;
+            document.getElementById("month").focus();
+            $('#msgerr').html('');
+            $('#msgerr').html('Month cannot be empty');
+            return false;
         }
 
         var birth_month = $("#month").val();
         if(birth_month != ''){
             if(isNaN(birth_month)){
-                alert("Month should be numeric"); return false;
+                document.getElementById("month").focus();
+                $('#msgerr').html('');
+                $('#msgerr').html('Month should be numeric'); 
+                return false;
             }
         }
 
         if($("#birth_year").val().search(/\S/) == -1){
-            alert("Birth year cannot be empty");return false;
+            document.getElementById("birth_year").focus();
+            $('#msgerr').html('');
+            $('#msgerr').html('Birth year cannot be empty');
+            return false;
         }
 
         var birth_year = $("#birth_year").val();
         if(birth_year != ''){
             if(isNaN(birth_year)){
-                alert("Year should be numeric"); return false;
+                document.getElementById("birth_year").focus();
+                $('#msgerr').html('');
+                $('#msgerr').html('Year should be numeric');
+                return false;
             }
         }
 
