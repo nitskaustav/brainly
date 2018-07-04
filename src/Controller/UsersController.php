@@ -786,6 +786,7 @@ class UsersController extends AppController {
         $this->set(compact('users'));
     }
 
+//kaustav
     public function sellerdashboard() {
         $this->viewBuilder()->layout('default');
         $this->loadModel('Products');
