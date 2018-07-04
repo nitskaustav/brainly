@@ -1,0 +1,96 @@
+[09-08-2017 10:03:03] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[09-08-2017 10:03:05] PayPal\Core\PayPalHttpConnection : DEBUG: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.12.0 (platform-ver=7.1.8-1+ubuntu16.04.1+deb.sury.org+1; bit=64; os=Linux_4.4.0-87-generic; machine=x86_64; crypto-lib-ver=1.1.0f; curl=7.47.0), Authorization: Basic QWJLWVljR2owSkx1TWxpb3BYRElsampfNVRMRWpGNHpDSldRYldnNU5RZGxjX1NBZThoVjFLc25QalRWUEFjdkJTMDB0bTQ2c0FPOUNobkU6RUdSM19yc3U1bUQtSHBFVy1vNUJUdGxibjJXUWJ5SHJyOEc0d28wMFZSdmxGd1hya3lfdzFjc3NLSHJmLThsYmNMbmZ0OHJnT2JkU0twR1Y=, Accept: */*, Content-Length: 265, Content-Type: application/x-www-form-urlencoded, , 
+[09-08-2017 10:03:05] PayPal\Core\PayPalHttpConnection : DEBUG: Request Data		: grant_type=authorization_code&code=mock_code_EJhi9jOPswug9TDOv93qg4Y28xIlqPDpAoqd7biDLpeGCPvORHjP1Fh4CbFPgKMGCHejdDwe9w1uDWnjPCp1lkaFBjVmjvjpFtnr6z1YeBbmfZYqa9faQT_71dmgZhMIFVkbi4yO7hk0LBHXt_wtdsw&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&response_type=token
+--------------------------------------------------------------------------------------------------------------------------------
+
+[09-08-2017 10:03:05] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 401
+[09-08-2017 10:03:05] PayPal\Core\PayPalHttpConnection : DEBUG: Response Headers	: Date: Wed, 09 Aug 2017 10:03:05 GMT, Server: Apache, paypal-debug-id: cde70bfd1390a, X-PAYPAL-TOKEN-SERVICE: IAAS, HTTP_X_PP_AZ_LOCATOR: sandbox.slc, Paypal-Debug-Id: cde70bfd1390a, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Content-Length: 90, Connection: close, Content-Type: application/json, 
+[09-08-2017 10:03:05] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token. {"error":"invalid_authz_code","error_description":"Authorization code not found in cache"}
+[09-08-2017 10:03:05] PayPal\Core\PayPalHttpConnection : DEBUG: 
+
+================================================================================================================================
+
+[09-08-2017 10:03:09] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[09-08-2017 10:03:11] PayPal\Core\PayPalHttpConnection : DEBUG: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.12.0 (platform-ver=7.1.8-1+ubuntu16.04.1+deb.sury.org+1; bit=64; os=Linux_4.4.0-87-generic; machine=x86_64; crypto-lib-ver=1.1.0f; curl=7.47.0), Authorization: Basic QWJLWVljR2owSkx1TWxpb3BYRElsampfNVRMRWpGNHpDSldRYldnNU5RZGxjX1NBZThoVjFLc25QalRWUEFjdkJTMDB0bTQ2c0FPOUNobkU6RUdSM19yc3U1bUQtSHBFVy1vNUJUdGxibjJXUWJ5SHJyOEc0d28wMFZSdmxGd1hya3lfdzFjc3NLSHJmLThsYmNMbmZ0OHJnT2JkU0twR1Y=, Accept: */*, Content-Length: 265, Content-Type: application/x-www-form-urlencoded, , 
+[09-08-2017 10:03:11] PayPal\Core\PayPalHttpConnection : DEBUG: Request Data		: grant_type=authorization_code&code=mock_code_EJhi9jOPswug9TDOv93qg4Y28xIlqPDpAoqd7biDLpeGCPvORHjP1Fh4CbFPgKMGCHejdDwe9w1uDWnjPCp1lkaFBjVmjvjpFtnr6z1YeBbmfZYqa9faQT_71dmgZhMIFVkbi4yO7hk0LBHXt_wtdsw&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&response_type=token
+--------------------------------------------------------------------------------------------------------------------------------
+
+[09-08-2017 10:03:11] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 401
+[09-08-2017 10:03:11] PayPal\Core\PayPalHttpConnection : DEBUG: Response Headers	: Date: Wed, 09 Aug 2017 10:03:11 GMT, Server: Apache, paypal-debug-id: 19cdb59f9d2a9, X-PAYPAL-TOKEN-SERVICE: IAAS, HTTP_X_PP_AZ_LOCATOR: sandbox.slc, Paypal-Debug-Id: 19cdb59f9d2a9, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Content-Length: 90, Connection: close, Content-Type: application/json, 
+[09-08-2017 10:03:11] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token. {"error":"invalid_authz_code","error_description":"Authorization code not found in cache"}
+[09-08-2017 10:03:11] PayPal\Core\PayPalHttpConnection : DEBUG: 
+
+================================================================================================================================
+
+[09-08-2017 10:03:18] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[09-08-2017 10:03:20] PayPal\Core\PayPalHttpConnection : DEBUG: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.12.0 (platform-ver=7.1.8-1+ubuntu16.04.1+deb.sury.org+1; bit=64; os=Linux_4.4.0-87-generic; machine=x86_64; crypto-lib-ver=1.1.0f; curl=7.47.0), Authorization: Basic QWJLWVljR2owSkx1TWxpb3BYRElsampfNVRMRWpGNHpDSldRYldnNU5RZGxjX1NBZThoVjFLc25QalRWUEFjdkJTMDB0bTQ2c0FPOUNobkU6RUdSM19yc3U1bUQtSHBFVy1vNUJUdGxibjJXUWJ5SHJyOEc0d28wMFZSdmxGd1hya3lfdzFjc3NLSHJmLThsYmNMbmZ0OHJnT2JkU0twR1Y=, Accept: */*, Content-Length: 265, Content-Type: application/x-www-form-urlencoded, , 
+[09-08-2017 10:03:20] PayPal\Core\PayPalHttpConnection : DEBUG: Request Data		: grant_type=authorization_code&code=mock_code_EJhi9jOPswug9TDOv93qg4Y28xIlqPDpAoqd7biDLpeGCPvORHjP1Fh4CbFPgKMGCHejdDwe9w1uDWnjPCp1lkaFBjVmjvjpFtnr6z1YeBbmfZYqa9faQT_71dmgZhMIFVkbi4yO7hk0LBHXt_wtdsw&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&response_type=token
+--------------------------------------------------------------------------------------------------------------------------------
+
+[09-08-2017 10:03:20] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 401
+[09-08-2017 10:03:20] PayPal\Core\PayPalHttpConnection : DEBUG: Response Headers	: Date: Wed, 09 Aug 2017 10:03:20 GMT, Server: Apache, paypal-debug-id: e13f114b6eb93, X-PAYPAL-TOKEN-SERVICE: IAAS, HTTP_X_PP_AZ_LOCATOR: sandbox.slc, Paypal-Debug-Id: e13f114b6eb93, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Content-Length: 90, Connection: close, Content-Type: application/json, 
+[09-08-2017 10:03:20] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token. {"error":"invalid_authz_code","error_description":"Authorization code not found in cache"}
+[09-08-2017 10:03:20] PayPal\Core\PayPalHttpConnection : DEBUG: 
+
+================================================================================================================================
+
+[09-08-2017 10:13:24] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[09-08-2017 10:13:25] PayPal\Core\PayPalHttpConnection : DEBUG: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.12.0 (platform-ver=7.1.8-1+ubuntu16.04.1+deb.sury.org+1; bit=64; os=Linux_4.4.0-87-generic; machine=x86_64; crypto-lib-ver=1.1.0f; curl=7.47.0), Authorization: Basic QWJLWVljR2owSkx1TWxpb3BYRElsampfNVRMRWpGNHpDSldRYldnNU5RZGxjX1NBZThoVjFLc25QalRWUEFjdkJTMDB0bTQ2c0FPOUNobkU6RUdSM19yc3U1bUQtSHBFVy1vNUJUdGxibjJXUWJ5SHJyOEc0d28wMFZSdmxGd1hya3lfdzFjc3NLSHJmLThsYmNMbmZ0OHJnT2JkU0twR1Y=, Accept: */*, Content-Length: 265, Content-Type: application/x-www-form-urlencoded, , 
+[09-08-2017 10:13:25] PayPal\Core\PayPalHttpConnection : DEBUG: Request Data		: grant_type=authorization_code&code=mock_code_EJhi9jOPswug9TDOv93qg4Y28xIlqPDpAoqd7biDLpeGCPvORHjP1Fh4CbFPgKMGCHejdDwe9w1uDWnjPCp1lkaFBjVmjvjpFtnr6z1YeBbmfZYqa9faQT_71dmgZhMIFVkbi4yO7hk0LBHXt_wtdsw&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&response_type=token
+--------------------------------------------------------------------------------------------------------------------------------
+
+[09-08-2017 10:13:25] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 401
+[09-08-2017 10:13:25] PayPal\Core\PayPalHttpConnection : DEBUG: Response Headers	: Date: Wed, 09 Aug 2017 10:13:25 GMT, Server: Apache, paypal-debug-id: 2c593e3d51c43, X-PAYPAL-TOKEN-SERVICE: IAAS, HTTP_X_PP_AZ_LOCATOR: sandbox.slc, Paypal-Debug-Id: 2c593e3d51c43, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Content-Length: 90, Connection: close, Content-Type: application/json, 
+[09-08-2017 10:13:25] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token. {"error":"invalid_authz_code","error_description":"Authorization code not found in cache"}
+[09-08-2017 10:13:25] PayPal\Core\PayPalHttpConnection : DEBUG: 
+
+================================================================================================================================
+
+[09-08-2017 10:13:34] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[09-08-2017 10:13:36] PayPal\Core\PayPalHttpConnection : DEBUG: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.12.0 (platform-ver=7.1.8-1+ubuntu16.04.1+deb.sury.org+1; bit=64; os=Linux_4.4.0-87-generic; machine=x86_64; crypto-lib-ver=1.1.0f; curl=7.47.0), Authorization: Basic QWJLWVljR2owSkx1TWxpb3BYRElsampfNVRMRWpGNHpDSldRYldnNU5RZGxjX1NBZThoVjFLc25QalRWUEFjdkJTMDB0bTQ2c0FPOUNobkU6RUdSM19yc3U1bUQtSHBFVy1vNUJUdGxibjJXUWJ5SHJyOEc0d28wMFZSdmxGd1hya3lfdzFjc3NLSHJmLThsYmNMbmZ0OHJnT2JkU0twR1Y=, Accept: */*, Content-Length: 265, Content-Type: application/x-www-form-urlencoded, , 
+[09-08-2017 10:13:36] PayPal\Core\PayPalHttpConnection : DEBUG: Request Data		: grant_type=authorization_code&code=mock_code_EJhi9jOPswug9TDOv93qg4Y28xIlqPDpAoqd7biDLpeGCPvORHjP1Fh4CbFPgKMGCHejdDwe9w1uDWnjPCp1lkaFBjVmjvjpFtnr6z1YeBbmfZYqa9faQT_71dmgZhMIFVkbi4yO7hk0LBHXt_wtdsw&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&response_type=token
+--------------------------------------------------------------------------------------------------------------------------------
+
+[09-08-2017 10:13:36] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 401
+[09-08-2017 10:13:36] PayPal\Core\PayPalHttpConnection : DEBUG: Response Headers	: Date: Wed, 09 Aug 2017 10:13:36 GMT, Server: Apache, paypal-debug-id: 393d7bab4fbb6, X-PAYPAL-TOKEN-SERVICE: IAAS, HTTP_X_PP_AZ_LOCATOR: sandbox.slc, Paypal-Debug-Id: 393d7bab4fbb6, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Content-Length: 90, Connection: close, Content-Type: application/json, 
+[09-08-2017 10:13:36] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token. {"error":"invalid_authz_code","error_description":"Authorization code not found in cache"}
+[09-08-2017 10:13:36] PayPal\Core\PayPalHttpConnection : DEBUG: 
+
+================================================================================================================================
+
+[09-08-2017 10:13:39] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[09-08-2017 10:13:40] PayPal\Core\PayPalHttpConnection : DEBUG: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.12.0 (platform-ver=7.1.8-1+ubuntu16.04.1+deb.sury.org+1; bit=64; os=Linux_4.4.0-87-generic; machine=x86_64; crypto-lib-ver=1.1.0f; curl=7.47.0), Authorization: Basic QWJLWVljR2owSkx1TWxpb3BYRElsampfNVRMRWpGNHpDSldRYldnNU5RZGxjX1NBZThoVjFLc25QalRWUEFjdkJTMDB0bTQ2c0FPOUNobkU6RUdSM19yc3U1bUQtSHBFVy1vNUJUdGxibjJXUWJ5SHJyOEc0d28wMFZSdmxGd1hya3lfdzFjc3NLSHJmLThsYmNMbmZ0OHJnT2JkU0twR1Y=, Accept: */*, Content-Length: 265, Content-Type: application/x-www-form-urlencoded, , 
+[09-08-2017 10:13:40] PayPal\Core\PayPalHttpConnection : DEBUG: Request Data		: grant_type=authorization_code&code=mock_code_EJhi9jOPswug9TDOv93qg4Y28xIlqPDpAoqd7biDLpeGCPvORHjP1Fh4CbFPgKMGCHejdDwe9w1uDWnjPCp1lkaFBjVmjvjpFtnr6z1YeBbmfZYqa9faQT_71dmgZhMIFVkbi4yO7hk0LBHXt_wtdsw&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&response_type=token
+--------------------------------------------------------------------------------------------------------------------------------
+
+[09-08-2017 10:13:40] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 401
+[09-08-2017 10:13:40] PayPal\Core\PayPalHttpConnection : DEBUG: Response Headers	: Date: Wed, 09 Aug 2017 10:13:40 GMT, Server: Apache, paypal-debug-id: 35ff4c889b21e, X-PAYPAL-TOKEN-SERVICE: IAAS, HTTP_X_PP_AZ_LOCATOR: sandbox.slc, Paypal-Debug-Id: 35ff4c889b21e, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Content-Length: 90, Connection: close, Content-Type: application/json, 
+[09-08-2017 10:13:40] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token. {"error":"invalid_authz_code","error_description":"Authorization code not found in cache"}
+[09-08-2017 10:13:40] PayPal\Core\PayPalHttpConnection : DEBUG: 
+
+================================================================================================================================
+
+[09-08-2017 10:13:50] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[09-08-2017 10:13:52] PayPal\Core\PayPalHttpConnection : DEBUG: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.12.0 (platform-ver=7.1.8-1+ubuntu16.04.1+deb.sury.org+1; bit=64; os=Linux_4.4.0-87-generic; machine=x86_64; crypto-lib-ver=1.1.0f; curl=7.47.0), Authorization: Basic QWJLWVljR2owSkx1TWxpb3BYRElsampfNVRMRWpGNHpDSldRYldnNU5RZGxjX1NBZThoVjFLc25QalRWUEFjdkJTMDB0bTQ2c0FPOUNobkU6RUdSM19yc3U1bUQtSHBFVy1vNUJUdGxibjJXUWJ5SHJyOEc0d28wMFZSdmxGd1hya3lfdzFjc3NLSHJmLThsYmNMbmZ0OHJnT2JkU0twR1Y=, Accept: */*, Content-Length: 265, Content-Type: application/x-www-form-urlencoded, , 
+[09-08-2017 10:13:52] PayPal\Core\PayPalHttpConnection : DEBUG: Request Data		: grant_type=authorization_code&code=mock_code_EJhi9jOPswug9TDOv93qg4Y28xIlqPDpAoqd7biDLpeGCPvORHjP1Fh4CbFPgKMGCHejdDwe9w1uDWnjPCp1lkaFBjVmjvjpFtnr6z1YeBbmfZYqa9faQT_71dmgZhMIFVkbi4yO7hk0LBHXt_wtdsw&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&response_type=token
+--------------------------------------------------------------------------------------------------------------------------------
+
+[09-08-2017 10:13:52] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 401
+[09-08-2017 10:13:52] PayPal\Core\PayPalHttpConnection : DEBUG: Response Headers	: Date: Wed, 09 Aug 2017 10:13:52 GMT, Server: Apache, paypal-debug-id: 8048b5ae64e1f, X-PAYPAL-TOKEN-SERVICE: IAAS, HTTP_X_PP_AZ_LOCATOR: sandbox.slc, Paypal-Debug-Id: 8048b5ae64e1f, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Content-Length: 90, Connection: close, Content-Type: application/json, 
+[09-08-2017 10:13:52] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token. {"error":"invalid_authz_code","error_description":"Authorization code not found in cache"}
+[09-08-2017 10:13:52] PayPal\Core\PayPalHttpConnection : DEBUG: 
+
+================================================================================================================================
+
+[09-08-2017 10:15:17] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[09-08-2017 10:15:19] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 401
+[09-08-2017 10:15:19] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token. {"error":"invalid_authz_code","error_description":"Authorization code not found in cache"}
+[09-08-2017 10:27:10] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[09-08-2017 10:27:12] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 401
+[09-08-2017 10:27:12] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token. {"error":"invalid_authz_code","error_description":"Authorization code not found in cache"}
+[09-08-2017 10:27:56] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[09-08-2017 10:27:58] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 401
+[09-08-2017 10:27:58] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token. {"error":"invalid_authz_code","error_description":"Authorization code not found in cache"}
+[09-08-2017 10:28:06] PayPal\Core\PayPalHttpConnection : INFO: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[09-08-2017 10:28:07] PayPal\Core\PayPalHttpConnection : INFO: Response Status 	: 401
+[09-08-2017 10:28:07] PayPal\Core\PayPalHttpConnection : ERROR: Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token. {"error":"invalid_authz_code","error_description":"Authorization code not found in cache"}

@@ -1,0 +1,1 @@
+<center><h1 style="color:green;">Your order has been placed successfully</h1></center>

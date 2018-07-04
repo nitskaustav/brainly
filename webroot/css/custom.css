@@ -1,0 +1,116 @@
+html,body{height:100%}
+body{font-size:14px;font-family: arial;}
+body,p,span,div{font-size:14px;font-family: 'Lato', sans-serif;font-weight:400;}
+.btn-primary{background:#10b9ec;border-color:#10b9ec;font-size:14px}
+a{color:#10b9ec}
+a:hover{color:#125e76}
+
+.ion-navicon{color:#fff;font-size:26px}
+.navbar-toggler{border:0;}
+
+.btn-primary{background: #38b70b;border: 0;}
+.btn-outline-primary{background:none;border:1px solid #38b70b;color:#38b70b}
+.btn-primary.btn-lg{font-weight: 900;font-size:20px;padding: 7px 45px;margin:5px 0}
+.btn{font-size: 14px;padding: 5px 20px}
+
+.navbar-light{background:none !important;}
+.navbar-light.black,.navbar-light.black-mobile{background:rgba(0,0,0,.5) !important;}
+
+
+.list-group-item.active{background: #38b70b;border-color:#38b70b;font-size:20px;}
+
+.banner{width:100%;height:auto;overflow: hidden;background-image: url('../images/banner-bg.jpg');background-size: cover;}
+.search-box{position: absolute;z-index: 9999999;width: auto;height: auto;top: 55%;transform: translate(-50%,-50%);left: 50%;color: white;text-align: center;}
+.search-box h3{margin-bottom: 0px;font-weight:700;font-size:24px;}
+.search-box h1{margin-bottom: 15px;font-weight:700;font-size:36px;}
+.search-box .form-group{position: relative;}
+.search-box input[type="text"]{border: 0;height: 50px;font-size:18px;padding-left:50px;width:535px;}
+.search-box .form-group i{position: absolute;top: 8px;left: 15px;z-index: 9999;color: #bcbcbc;font-size: 25px;}
+
+
+.content-section{width:100%;height: auto;background: #f1f1f1}
+.left-list .list-group-item{padding: 20px 0;cursor: pointer;}
+.left-list .list-group-item img{-webkit-filter: grayscale(100%);filter: grayscale(100%);width:32px;display: block;margin: 0 auto;}
+.left-list .list-group-item:hover img,.left-list .list-group-item.active img{-webkit-filter: none;filter: none;}
+.left-list .list-group-item p{text-align: center;color:#313131;font-size:16px;margin: 5px auto 0}
+.left-list .list-group-item.active{background: #fff;border-color:rgba(0,0,0,.125);}
+.left-list .list-group-item:hover p,.left-list .list-group-item.active p{color:#38b70b}
+
+.center-list .list-group{padding: 0 25px;background:#fff;border:1px solid rgba(0,0,0,.125);}
+.center-list .list-group-item{border:0;border-bottom:1px solid rgba(0,0,0,.125) !important;margin-bottom:0;padding: 20px 0px}
+.center-list .list-group-item img{width:38px;height:38px;border-radius: 100%;display: block;}
+.center-list .list-group-item h5{color:#1f1f1f;font-size: 14px;font-weight: 700;}
+.center-list .list-group-item p{color:#505050;font-size: 17px;font-weight: 400;line-height: 24px;}
+
+.ans-header{margin-bottom:30px}
+.ans-header h1{font-weight: 900;font-size:36px;}
+
+.ans-header .text-image{background: #38b70b;width:38px;height:38px;border-radius: 100%;color:#fff;text-align: center;line-height: 38px;font-weight:900;font-size:24px;flex: 0 0 auto;}
+
+.right-box .list-group-item{padding: 8px 15px}
+
+select.form-control{font-size: 13px;-webkit-appearance: none;-moz-appearance:none;appearance:none;background-image: url(../images/collected/down-arrow.svg);background-repeat: no-repeat;background-position: 90% center;background-size: 14px}
+.user-list img{width:38px;height:38px;border-radius: 100%;margin-right: 10px}
+.user-list p{color:#1f1f1f;font-size: 12px;font-weight: 700;margin: 0;display: flex;width:100%;justify-content:space-between;flex-wrap: wrap;}
+.user-list p span{font-size:12px}
+.user-list li{border-bottom: 1px solid rgba(0,0,0,.125);padding: 10px 0}
+
+footer{background: #0b2402;}
+footer .footer-top{border-bottom: 1px solid #113803}
+footer .footer-top b{color:#fff;font-size:20px;font-weight: 900;margin-bottom: 10px;display: block;}
+footer .footer-top a{color: #d1d1d1;font-size:13px;display: block;line-height: 25px}
+footer .social a{background: #fff;width:40px;height: 40px;border-radius:100%;}
+footer .social{display: flex;justify-content:space-between}
+footer .social li{float: left;}
+footer .social li a i{color:#0b2402;font-size:28px;text-align: center;display: block;line-height: 40px;}
+footer .footer-bottom{border-top:1px solid #030c01;}
+footer .footer-bottom span{color:#fff;font-size:13px}
+
+/************************************************************/
+.inner-header{background: #4c7c59 !important}
+.signin-form{background: #fff;padding: 25px;border: 1px solid rgba(0,0,0,.125);border-radius: 3px}
+.facebook{width:100%;background: #2e5ac9;color:#fff;padding: 0 15px}
+.facebook i{font-size:25px;display: block;float: left;}
+.facebook span{font-size: 14px;text-transform: uppercase;font-weight: 900;font-family: 'Lato', sans-serif;line-height: 38px}
+.signin-form b{font-weight: 900;text-transform: uppercase;}
+.footer-login{border-top:1px solid #ddd;margin-top: 15px}
+.footer-login p{font-size: 13px;margin: 0;margin-top: 10px}
+.footer-login p a{color:#38b70b}
+
+.signup-image img{width:400px;margin: 0 auto;display: block;}
+.signup-image{position: relative;}
+.signup-image h1{font-weight: 900;text-transform: uppercase;position: absolute;top:50%;background: #f1f1f1;font-size: 30px;left:50%;transform: translate(-50%,-50%);width:100%;text-align: center;line-height: 50px;color: #6a9a4e}
+
+/************************************************************/
+
+	
+@media(max-width: 992px){
+	.banner img{width:100%}
+	.left-list .list-group{flex-direction: row;flex-wrap:wrap;justify-content:space-between}
+	.left-list .list-group-item{width:100px;border-radius: 0}
+	.left-list .list-group-item p{font-size: 13px}
+	.left-list .list-group-item {width: 33%;border-radius: 0;margin-bottom: 3px;
+}
+
+@media(max-width: 767px){
+	.banner{background: #39b70d !important}
+	.banner img{display: none;}
+	.search-box{position: relative;transform: none;left: auto;right: auto;top: auto;padding: 100px 15px 0px;z-index: 0}
+	.search-box input[type="text"]{width:100%}
+	.search-box h3{font-size:14px;margin-bottom: 10px}
+	.search-box h1{font-size: 22px;}
+	
+	.ans-header h1{font-size: 25px;}
+	.btn-primary.btn-lg{font-size: 16px;padding: 7px 0px;width:100%}
+	
+	.navbar-brand{font-size:25px !important}
+	
+	footer{text-align: center;}
+	.social{justify-content:center !important}
+	.social li{margin: 0 5px}
+	
+	.signup-image img{width:200px;margin-bottom: 20px;}
+	.signup-image h1{font-size: 16px;line-height: 36px;}
+	
+	
+}
