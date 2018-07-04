@@ -18,7 +18,7 @@
                                 </div>
                                 
                                 <div class="form-group">
-                                    <button class="btn btn-primary btn-lg text-capitalize">Set Password</button>
+                                    <button class="btn btn-primary btn-lg text-capitalize">Recover Password</button>
                                 </div>
                             </form>
                             
